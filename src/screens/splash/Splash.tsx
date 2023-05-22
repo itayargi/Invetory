@@ -1,24 +1,40 @@
-import {StyleSheet, Text, View} from 'react-native';
 import React, {useEffect} from 'react';
-import {wait} from '../../utils/utils';
-import {navigate} from '../../navigation/navigationRef';
+import {ActivityIndicator, ImageBackground, StyleSheet} from 'react-native';
+import imageIndex from '../../images/imageIndex';
 import ScreenNames from '../../navigation/ScreenNames';
+import {navigate} from '../../navigation/navigationRef';
+import {colors, sizes} from '../../utils/constant';
+import {wait} from '../../utils/utils';
 
 type Props = {};
 
 const Splash = (props: Props) => {
   useEffect(() => {
-    wait(3000).then(() => {
-      navigate(ScreenNames.homeScreen);
-    });
+    const onInit = async () => {
+      wait(3000).then(() => {
+        navigate(ScreenNames.homeScreen);
+      });
+    };
+    onInit();
   }, []);
   return (
-    <View>
-      <Text>Splash</Text>
-    </View>
+    <ImageBackground
+      resizeMode="contain"
+      source={imageIndex.splash()}
+      style={styles.container}>
+      <ActivityIndicator size="large" color={colors.colorSeafoamBlue} />
+    </ImageBackground>
   );
 };
 
 export default Splash;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    height: sizes.PageHieght,
+    width: sizes.PageWidth,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});

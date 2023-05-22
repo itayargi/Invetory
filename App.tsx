@@ -8,10 +8,12 @@ import React from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
 
 import AppNavigation from './src/navigation/AppNavigation';
+import Loader from './src/components/loader/Loader';
 
 function App(): JSX.Element {
   return (
     <SafeAreaView style={styles.container}>
+      <Loader />
       <AppNavigation />
     </SafeAreaView>
   );

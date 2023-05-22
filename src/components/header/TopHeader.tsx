@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {colors, sizes} from '../../utils/constant';
-
+import LinearGradient from 'react-native-linear-gradient';
 type Props = {
   title: string;
 };
@@ -9,9 +9,11 @@ type Props = {
 const TopHeader = (props: Props) => {
   const {title} = props;
   return (
-    <View style={styles.box}>
+    <LinearGradient
+      colors={['#4c669f', '#3b5998', '#192f6a']}
+      style={styles.box}>
       <Text style={styles.text}>{title}</Text>
-    </View>
+    </LinearGradient>
   );
 };
 
@@ -20,11 +22,14 @@ export default TopHeader;
 const styles = StyleSheet.create({
   box: {
     height: sizes.PageHieght * 0.1,
+    width: sizes.PageWidth,
+    alignSelf: 'center',
     backgroundColor: colors.headerBackground,
     justifyContent: 'center',
     alignItems: 'center',
   },
   text: {
     fontSize: 22,
+    color: colors.white,
   },
 });

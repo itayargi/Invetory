@@ -1,5 +1,3 @@
-// In App.js in a new project
-
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import * as React from 'react';
@@ -11,9 +9,13 @@ import {navigationRef} from './navigationRef';
 const Stack = createNativeStackNavigator();
 
 function AppNavigation() {
+  const navigatorParams = {
+    screenOptions: {headerShown: false},
+    initialRouteName: ScreenNames.splash,
+  };
   return (
     <NavigationContainer ref={navigationRef}>
-      <Stack.Navigator initialRouteName={ScreenNames.splash}>
+      <Stack.Navigator {...navigatorParams}>
         <Stack.Screen name={ScreenNames.homeScreen} component={HomeScreen} />
         <Stack.Screen name={ScreenNames.splash} component={Splash} />
       </Stack.Navigator>

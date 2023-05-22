@@ -14,5 +14,9 @@ export const sizes = {
   PageWidth: pageWidth,
 };
 export const colors = {
-  headerBackground: 'F3EDCC',
+  headerBackground: '#F3EDCC',
+  colorSeafoamBlue: '#50d2c2',
+  background: '#B9E9FC',
+  backgroundOpacity: 'rgb(185, 233, 252)',
+  white: '#ffffff',
 };

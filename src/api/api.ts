@@ -22,7 +22,7 @@ const fetchInterceptor = async (
   try {
     const res = await fetch(url, params);
     const responseStatus = res.status;
-    console.log('📢[api.js:42]: responseStatus: ', responseStatus);
+    logDev('📢responseStatus: ', responseStatus);
     switch (responseStatus) {
       case 200:
         logDev('success fetch');

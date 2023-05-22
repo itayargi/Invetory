@@ -1,9 +1,17 @@
 import React from 'react';
-import {View, Text, StyleSheet, FlatList} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  StyleProp,
+  ViewStyle,
+} from 'react-native';
 import {Inventory} from '../../utils/types';
 
 type Props = {
   data: Inventory[];
+  style?: StyleProp<ViewStyle>;
 };
 
 const Card: React.FC<Inventory> = ({name, age}) => (
@@ -13,21 +21,15 @@ const Card: React.FC<Inventory> = ({name, age}) => (
   </View>
 );
 
-const RenderPersons: React.FC<Props> = ({data}) => (
-  <View>
-    {/* {data.map((person, index) => (
-      <Card key={index} {...person} />
-    ))} */}
-    
-    <FlatList
-      bounces={false}
-      showsVerticalScrollIndicator={false}
-      data={data}
-      //   contentContainerStyle={styles.categoriesContainer}
-      renderItem={({item}) => Card(item)}
-      keyExtractor={(item, index) => index.toString()}
-    />
-  </View>
+const RenderPersons: React.FC<Props> = ({data, style}) => (
+  <FlatList
+    bounces={false}
+    showsVerticalScrollIndicator={false}
+    contentContainerStyle={style}
+    data={data}
+    renderItem={({item}) => Card(item)}
+    keyExtractor={(item, index) => index.toString()}
+  />
 );
 
 const styles = StyleSheet.create({

@@ -1,10 +1,6 @@
-// import {GOOGLE_API_KEY} from '@env';
-// console.log('📢 GOOGLE_API_KEY: ', GOOGLE_API_KEY);
+import {GOOGLE_API_KEY, GOOGLE_SHEET_ID} from '@env';
 
-const GOOGLE_API_KEY = 'AIzaSyA_0XqXshuPwYVrvaUU4LVrSDM3QHXmfMI';
 const useDomain = '';
-const GOOGLE_SHEET_ID = '1jDYvzM4ggKjLtGG8yPwE4ajUsexSXS6Reu0jmuQ_lt0';
-console.log('📢 GOOGLE_SHEET_ID: ', GOOGLE_SHEET_ID);
 
 export default {
   googleSheets:
