@@ -1,7 +1,7 @@
-import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {colors, sizes} from '../../utils/constant';
+import {StyleSheet, Text} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import {colors, sizes} from '../../utils/constant';
 type Props = {
   title: string;
 };

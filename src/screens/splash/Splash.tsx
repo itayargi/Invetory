@@ -6,9 +6,7 @@ import {navigate} from '../../navigation/navigationRef';
 import {colors, sizes} from '../../utils/constant';
 import {wait} from '../../utils/utils';
 
-type Props = {};
-
-const Splash = (props: Props) => {
+const Splash = () => {
   useEffect(() => {
     const onInit = async () => {
       wait(3000).then(() => {
