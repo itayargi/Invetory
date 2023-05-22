@@ -9,12 +9,14 @@ import {SafeAreaView, StyleSheet} from 'react-native';
 
 import AppNavigation from './src/navigation/AppNavigation';
 import Loader from './src/components/loader/Loader';
+import ConnectionCheck from './src/components/connection/ConnectionCheck';
 
 function App(): JSX.Element {
   return (
     <SafeAreaView style={styles.container}>
       <Loader />
       <AppNavigation />
+      <ConnectionCheck />
     </SafeAreaView>
   );
 }

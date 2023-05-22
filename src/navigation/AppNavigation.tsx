@@ -16,8 +16,8 @@ function AppNavigation() {
   return (
     <NavigationContainer ref={navigationRef}>
       <Stack.Navigator {...navigatorParams}>
-        <Stack.Screen name={ScreenNames.homeScreen} component={HomeScreen} />
         <Stack.Screen name={ScreenNames.splash} component={Splash} />
+        <Stack.Screen name={ScreenNames.homeScreen} component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
